@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	<!--  	<property name="hbm2ddl.auto">update</property> -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<!-- <mapping resource="mappings.hbm.xml"></mapping>
+		<mapping class="com.radical.entity.FarmarEntity"/> -->
+	 	
+	 	<mapping class="com.radical.entity.EmployeeEntity"/>
+	
+		<mapping class="com.radical.mappingOneToOne.Unidirc.entity.MedicalStoreEntity"/>
+		<mapping class="com.radical.mappingOneToOne.Unidirc.entity.AddressEntity"/>
+		<mapping class="com.radical.mapping.onetoone.bidirc.entity.CollegeEntity"/>
+		<mapping class="com.radical.mapping.onetoone.bidirc.entity.PrincipalEntity"/>
+		<mapping class="com.radical.mapping.onetomany.unidirc.entity.Employee_oneToMany"/>
+		<mapping class="com.radical.mapping.onetomany.unidirc.entity.Phone"/>
+		<mapping class="com.radical.mapping.onetomany.bidirc.entity.HouseEntity"/>
+		<mapping class="com.radical.mapping.onetomany.bidirc.entity.FamilyMemberEntity"/>
+		<mapping class="com.radical.mapping.manytomany.unidirc.entity.MedecineEntity"/>
+		<mapping class="com.radical.mapping.manytomany.unidirc.entity.SaltEntity"/>
+		<mapping class="com.radical.mapping.manytomany.bidirc.entity.ManagerEntity"/>
+		<mapping class="com.radical.mapping.manytomany.bidirc.entity.projectEntity"/>
+		
+		<mapping class="com.inherit.tableperhirarchy.singletable.entity.Person"/>
+		<mapping class="com.inherit.tableperhirarchy.singletable.entity.EmployeeSingleTable"/>
+		
+		<mapping class="com.inherit.tablepersubclass.joined.entity.Person_Joined"/>
+		<mapping class="com.inherit.tablepersubclass.joined.entity.Employee_joined"/>
+		<mapping class="com.inherit.tablepersubclass.joined.entity.Owner_joined"/>
+		
+		<mapping class="com.inherit.perconcreteclass.tableperclass.entity.Person_table_per_class"/>
+		<mapping class="com.inherit.perconcreteclass.tableperclass.entity.Employee_table_per_class"/>
+		<mapping class="com.inherit.perconcreteclass.tableperclass.entity.Owner_table_per_class"/>
+		
+		
+	</session-factory>
+</hibernate-configuration>
